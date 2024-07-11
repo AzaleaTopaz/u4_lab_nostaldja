@@ -10,3 +10,16 @@ class Century(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Decade(models.Model):
+    name = models.ForeignKey(Century, on_delete=models.CASCADE, related_name='songs')
+    name = models.CharField(max_length=100)
+    start_year = models.IntegerField()
+    end_year = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+    
+
+    
